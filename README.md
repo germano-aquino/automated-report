@@ -1,7 +1,7 @@
 # Automated-Report
 It is a automated report for vpn connections using zabbix api and ldapsearch to get the data.
 
-# Dependecies
+# Dependencies
 Python3, Pandas, datetime, requests, time, pytz, ldapsearch.
 
 # How to Run
