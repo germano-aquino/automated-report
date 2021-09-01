@@ -32,7 +32,10 @@ port8 = getGraphID(authtoken, hostID, groupID, "Network Traffic port8")
 ##get graphitemID
 downloadID = getItemIDbyGraphID(authtoken, port8)
 
+##get Traffic Information
 report = getLastWeekTraffic(authtoken, downloadID)
+
+##setting report Df
 report["NR MÁX CONEXÕES SIMULTÂNEAS VPN"] = VPN
 ldap = pd.read_csv("vpn.csv", header=None, names=["DATA", "number"], index_col=0, parse_dates=True)
 
@@ -53,6 +56,8 @@ report["CAPACIDADE TOTAL ENLACES INTERNET"] = enlace
 report["NR DE USUÁRIOS VPN CADASTRADOS"] = users
 columnsName = ["DATA", "NR DE USUÁRIOS VPN CADASTRADOS", "NR MÁX CONEXÕES SIMULTÂNEAS VPN" ,"CAPACIDADE TOTAL ENLACES INTERNET", "CONSUMO MÉDIO ENLACES INTERNET", "CONSUMO MÁX ENLACES INTERNET"]
 report = pd.DataFrame(report, columns=columnsName)
+
+##writing report in csv
 report.to_csv("Novas_Estatisticas.csv", index=False)
 
 ##logout##
