@@ -35,9 +35,11 @@ downloadID = getItemIDbyGraphID(authtoken, port8)
 ##get Traffic Information
 report = getLastWeekTraffic(authtoken, downloadID)
 
+##reading vpn.csv
+ldap = pd.read_csv("vpn.csv", header=None, names=["DATA", "number"], index_col=0, parse_dates=True)
+
 ##setting report Df
 report["NR MÁX CONEXÕES SIMULTÂNEAS VPN"] = VPN
-ldap = pd.read_csv("vpn.csv", header=None, names=["DATA", "number"], index_col=0, parse_dates=True)
 
 date = []
 enlace = []
