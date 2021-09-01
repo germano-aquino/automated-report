@@ -4,7 +4,7 @@ import time
 import pytz
 
 headers = {'Content-Type': 'application/json-rpc'}
-url = 'http://zabbixn.5cta.eb.mil.br/api_jsonrpc.php'
+url = 'http://zabbix.net/api_jsonrpc.php'
 
 def login(user, passwd):
 	data = {
